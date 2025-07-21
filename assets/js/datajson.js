@@ -70,7 +70,7 @@ async function init() {
     }
   }
 
-  data = await getData('preview-tamu');
+  data = await getData('preview-undangan-pernikahan');
   data_update = data.updated;
   if (data && Array.isArray(data.tamu)) {
     gantiIsiClass("nama", namaTamu);
@@ -104,7 +104,7 @@ async function updateData() {
 
     // Pengulangan ambil data terus-menerus
     const polling = async () => {
-      const dataBaru = await getData('preview-tamu');
+      const dataBaru = await getData('preview-undangan-pernikahan');
 
       if (dataBaru.updated && dataBaru.updated != data_update) {
         showAlert("Perubahan data terdeteksi. Memuat ulang halaman...", "info");
