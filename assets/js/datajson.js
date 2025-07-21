@@ -8,7 +8,7 @@ function getParam(variabel) {
 // variabel global
 const namaTamu = getParam("to");
 const SCRIPT_BASE_URL = "https://script.google.com/macros/s/AKfycbwZ_spsPzVJ_VC4y_mgYjUvFHYAagYjMseFTODgZUG1QXQZtKdlAxiuaVVXQ4HjaMN8rw/exec";
-const DATABASE_NAME = "preview"; 
+const DATABASE_NAME = "kryon_preview-undangan-pernikahan"; 
 let data_update;
 let data;
 
@@ -410,7 +410,7 @@ function buildUrlComment(komentar) {
     String(now.getHours()).padStart(2, '0'),
     String(now.getMinutes()).padStart(2, '0')
   ].join(':');
-  const query = `UPDATE tamu SET waktu-pesan=${encodeURIComponent(waktu)},pesan=${encodeURIComponent(komentar)} WHERE nama=${encodeCustom(namaTamu)}`;
+  const query = `UPDATE tamu SET waktu=${encodeURIComponent(waktu)},pesan=${encodeURIComponent(komentar)} WHERE nama=${encodeCustom(namaTamu)}`;
   return `${SCRIPT_BASE_URL}?conn=DATABASE=${DATABASE_NAME}&data=${query}`;
 }
 
